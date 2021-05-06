@@ -11,11 +11,6 @@ export interface ReactIssue {
   labels: ReactIssueLabel[]
 }
 
-export interface LoadIssuesAction {
-  type: ActionTypes.LOAD_ISSUES
-  payload: ReactIssue[];
-}
-
 export interface SetLoadingAction {
   type: ActionTypes.SET_LOADING;
   payload: boolean;
@@ -27,6 +22,5 @@ export interface SetNetworkReqCountAction {
 }
 
 export type Action =
-  | LoadIssuesAction
   | SetLoadingAction
   | SetNetworkReqCountAction;

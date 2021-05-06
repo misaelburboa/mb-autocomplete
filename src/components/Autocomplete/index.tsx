@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { IssuesProvider } from "../../providers";
 import { ReactIssue } from "../../store/actions";
 import "./index.css";
@@ -69,6 +70,11 @@ export const Autocomplete: React.FC<AutocompleteProps> = (props) => {
       setCursor(0)
     }
   }
+
+  
+  const loading = useTypedSelector(({ issues }) => issues);
+  console.log(loading) 
+
 
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.charCode === 13) {
